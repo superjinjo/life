@@ -152,6 +152,38 @@ const gameHandler = {
 
         //button to move onto next gen
         document.getElementById('next').addEventListener('click', () => { this.progressNextGeneration() });
+
+        //reset to default
+        document.getElementById('default').addEventListener('click', () => { this.resetBoard(true) });
+
+        //clear board
+        document.getElementById('clear').addEventListener('click', () => { this.resetBoard(false) });
+    },
+
+
+    resetBoard(useDefault) {
+        let board;
+
+        if(useDefault) {
+            board = [
+                [0,1,0,0,0],
+                [1,0,0,1,1],
+                [1,1,0,0,1],
+                [0,1,0,0,0],
+                [1,0,0,0,1]
+            ];
+        } else {
+            board = [
+                [0,0,0,0,0],
+                [0,0,0,0,0],
+                [0,0,0,0,0],
+                [0,0,0,0,0],
+                [0,0,0,0,0],
+            ]
+        }
+
+        this.gameBoard = new LifeBoard(board);
+        this.updateBoardView();
     },
 
     updateBoardView() {

@@ -11,3 +11,6 @@ Try out some of these [patterns](https://en.wikipedia.org/wiki/Conway%27s_Game_o
 
 ## How to play
 Simply open up the index.html file on your browser. The game loads with a default configuration. At any time, you can change the board by clicking on cells to toggle them. Simply click the "Next Generation" button to progress.
+
+## Notes
+This code uses ES6 syntax, so it will not work with Internet Explorer as is. You would need to use some sort of build tool like webpack in order to compile it, and you may need a polyfill for NodeList.forEach(). 

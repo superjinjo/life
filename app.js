@@ -132,17 +132,7 @@ class LifeBoard {
 const gameHandler = {
 
     init() {
-        const beginningBoard = [
-            [0,1,0,0,0],
-            [1,0,0,1,1],
-            [1,1,0,0,1],
-            [0,1,0,0,0],
-            [1,0,0,0,1]
-        ];
-
-        this.gameBoard = new LifeBoard(beginningBoard);
-
-        this.updateBoardView();
+        this.resetBoard(true);
         this.setupEventHandlers();
     },
 
